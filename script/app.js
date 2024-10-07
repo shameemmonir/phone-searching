@@ -21,18 +21,17 @@ const loadAllPhones = async (status, searchText) => {
 const displayAllPhone = (phones) => {
     const phoneContainer = document.getElementById('phones-container');
     phones.forEach(phone => {
-        console.log(phone);
+        const { brand, image, slug } = phone;
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="card m-2 bg-base-100 w-96 shadow-xl">
   <figure class="px-10 pt-10">
     <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes"
+      src=${image}
       class="rounded-xl" />
   </figure>
   <div class="card-body items-center text-center">
-    <h2 class="card-title">Shoes!</h2>
+    <h2 class="card-title">${brand}</h2>
     <p>If a dog chews shoes whose shoes does he choose?</p>
     <div class="card-actions">
       <button class="btn btn-primary">Buy Now</button>
